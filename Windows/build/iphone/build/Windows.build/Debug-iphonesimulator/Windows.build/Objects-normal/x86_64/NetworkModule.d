@@ -1,0 +1,48 @@
+dependencies: \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/NetworkModule.m \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiNetworkCookieProxy.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiProxy.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiBase.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiThreading.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiPublicAPI.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiEvaluator.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/KrollContext.h \
+  headers/JavaScriptCore/TiCore.h headers/JavaScriptCore/Ti.h \
+  headers/JavaScriptCore/TiBase.h headers/JavaScriptCore/TiContextRef.h \
+  headers/JavaScriptCore/TiObjectRef.h \
+  headers/JavaScriptCore/TiValueRef.h \
+  headers/JavaScriptCore/WebKitAvailability.h \
+  headers/JavaScriptCore/TiStringRef.h \
+  headers/JavaScriptCore/TiStringRefCF.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/KrollCallback.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/KrollObject.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiBindingRunLoop.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/NetworkModule.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiModule.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiUtils.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiDimension.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiColor.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/WebFont.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiFile.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiBuffer.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiBlob.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/Reachability.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiApp.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiHost.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/Bridge.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiStylesheet.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/KrollBridge.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/XHRBridge.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiRootViewController.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiControllerProtocols.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiViewProxy.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiUIView.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiAnimation.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiPoint.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/ListenerEntry.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/LayoutConstraint.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiGradient.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiRect.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiViewTemplate.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/SBJSON.h \
+  /Users/ericwilson1/Desktop/VFW/projects/Windows/build/iphone/Classes/TiNetworkSocketProxy.h

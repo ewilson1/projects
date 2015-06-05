@@ -2,6 +2,8 @@
 LAST_LAUNCH_TIMESTAMP=1433508796482
 Wilson_Eric_Project1\:launchMode=run
 Wilson_Eric_Project1\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.AB03F211-7DC4-4F2C-BC97-B1C691B4E1EC
+Windows\:launchMode=run
+Windows\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.simulator.launchShortcut.titanium_1_WVGA800
 eclipse.preferences.version=1
 preference.show.console.onError=true
 preference.studio.perspective.version=103
