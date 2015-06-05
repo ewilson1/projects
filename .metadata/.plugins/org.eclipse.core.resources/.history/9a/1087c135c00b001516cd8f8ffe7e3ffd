@@ -1,0 +1,34 @@
+Ti.UI.setBackgroundColor("#000");
+
+var mainWindow = Ti.UI.createWindow({
+	//Reserved Properties
+	backgroundColor: "white",
+	backgroundImage: "KS_nav_veiws.png",
+	backgroundRepeat: true,
+	title: "My First Window"
+});
+
+var myFirstView = Ti.UI.createView({
+	backgroundColor: "#333",
+	//borderColor: "Pink"
+	//borderRadius: 5,
+	//borderWidth: 1,
+	height: 100,
+	top: 20,
+	left: 20,
+	right: 20,
+	//These are custom properties
+	id: "Header",	
+	cost: "$40"
+	
+});
+
+var mySecondView = Ti.Ui.createView({
+	backgroundColor: "red",
+	width: "50%",
+	height: "50%",
+	top: 40
+})
+
+mainWindow.add(myFirstView, mySecondView);
+mainWindow.open();
