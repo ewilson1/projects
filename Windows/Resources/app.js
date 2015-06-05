@@ -13,6 +13,7 @@ var myTextView = Ti.UI.createView({
 	left: 20,
 	right: 20,
 	borderRadius: 5
+	
 });
 
 var textLabel = Ti.UI.createLabel({
@@ -44,11 +45,29 @@ var buttonText = Ti.UI.createLabel({
 	
 });
 
-var changeText = function(){
-	textLabel.text = "Hello Michelle, I love you";
+var displayItems = function(){
+	myTextView.hide();
+
+	topValue = 20;
+	
+	for(var i=0, j=food.length; i<j; i++){
+		var foodLabel = Ti.UI.createLabel({
+			text: food[i],
+			backgroundColor: "white",
+			left: 20,
+			right: 20,
+			height: 35,
+			top: topValue,
+			borderRadius: 5
+		});
+		mainWindow.add(foodLabel);
+		topValue = foodLabel.top + foodLabel.height + 10;
+	}
+	
+	
 };
 
-buttonView.addEventListener("click", changeText);
+buttonView.addEventListener("click", displayItems);
 
 mainWindow.add(myTextView, buttonView);
 myTextView.add(textLabel);
