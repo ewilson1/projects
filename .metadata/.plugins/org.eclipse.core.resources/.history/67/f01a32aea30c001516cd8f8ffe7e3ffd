@@ -1,4 +1,4 @@
-//Second Page called functions.js as required by the Professor
+
 //Now time to create the event listener for each of the buttons. We will start with the next button
 
 var ary = ["Oranges", "Apples", "Pineapple", "Bananas", "Watermelon"];
