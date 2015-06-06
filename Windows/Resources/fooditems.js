@@ -21,4 +21,4 @@ var displayItems = function(){
 	
 };
 
-buttonView.addEventListener("click", displayItems);
+buttonView.addEventListener("click.", displayItems);

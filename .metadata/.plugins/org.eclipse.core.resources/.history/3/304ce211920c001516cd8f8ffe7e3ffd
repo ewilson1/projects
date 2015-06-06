@@ -1,0 +1,17 @@
+var topValue = 20;
+	
+		var fruitLabel = Ti.UI.createLabel({
+			text: fruit[i],
+			backgroundColor: "white",
+			left: 20,
+			right: 20,
+			height: 35,
+			top: topValue,
+			borderRadius: 5
+		});
+
+		mainWindow.add(fruitLabel);
+		topValue = fruitLabel.top + fruitLabel.height + 10;
+	
+	}
+};

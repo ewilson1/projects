@@ -1,0 +1,76 @@
+Ti.UI.setBackgroundColor("#000");
+
+//Now create a window for all the elements to fit in
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "black",
+});
+
+//Now create the first window, which will hold the array of items to be displayed
+var myTextView = Ti.UI.createView({
+	backgroundColor: "white",
+	height: 150,
+	top: 120,
+	left: 20,
+	right: 20,
+	borderRadius: 5	
+});
+
+//Now create a text a text Label to go inside of the above window view
+
+var textLabel = Ti.UI.createLabel({
+	text: "Click button below to start",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	textAlign: "center",
+	top: 25,
+	right: 25,
+	left: 25,
+	bottom: 25	
+});
+
+//Now create the first button view on the left
+
+var buttonViewLeft = Ti.UI.createView({
+	backgroundColor: "#23ba00",
+	top: myTextView.top + myTextView.height + 15,
+	left: 20,
+	right: 20,
+	borderRadius: 5,
+	height: 50
+});
+
+//Now create the text for the left button
+
+var buttonTextLeft = Ti.UI.createLabel({
+	color: "#fff",
+	font: {fontSize: 16, fontFamily: "Arial"},
+	textAlign: "left",
+	text: "Left Button"	
+});
+
+//Now let's seprate the buttons into a left and right button
+
+var buttonViewRight = Ti.UI.createView({
+	backgroundColor: "#23ba00",
+	top: myTextView.top + myTextView.height + 15,
+	left: 20,
+	right: 20,
+	borderRadius: 5,
+	height: 50
+});
+
+//Now create the text for the right button
+
+var buttonTextRight = Ti.UI.createLabel({
+	color: "#fff",
+	font: {fontSize: 16, fontFamily: "Arial"},
+	textAlign: "right",
+	text: "Right Button"	
+});
+
+//Now let's see what we have so far
+
+mainWindow.add(myTextView, buttonViewLeft, buttonViewRight);
+myTextView.add(textLabel);
+buttonViewLeft.add(buttonTextLeft);
+buttonViewRight.add(buttonTextRight);
+mainWindow.open();

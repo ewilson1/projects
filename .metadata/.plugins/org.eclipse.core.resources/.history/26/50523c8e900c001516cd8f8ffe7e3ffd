@@ -1,0 +1,32 @@
+var food = ["Pasta", "Salad", "Apple", "Pizza"];
+
+var displayItems = function(){
+	myTextView.hide();
+
+	var topValue = 20;
+	
+		var foodLabel = Ti.UI.createLabel({
+			text: fruit[0],
+			backgroundColor: "white",
+			left: 20,
+			right: 20,
+			height: 35,
+			top: topValue,
+			borderRadius: 5
+		});
+		
+		var foodLabel = Ti.UI.createLabel({
+			text: fruit[1],
+			backgroundColor: "white",
+			left: 20,
+			right: 20,
+			height: 35,
+			top: topValue,
+			borderRadius: 5
+		});
+		
+		mainWindow.add(foodLabel);
+		topValue = foodLabel.top + foodLabel.height + 10;
+	};
+
+buttonView.addEventListener("click.", displayItems);

@@ -1,0 +1,108 @@
+Ti.UI.setBackgroundColor("#000");
+
+var fruit = ["Oranges", "Apples", "Pineapple", "Bananas", "Watermelon"];
+
+//Now create a window for all the elements to fit in
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "black",
+});
+
+//Now create the first window, which will hold the array of items to be displayed
+var myTextView = Ti.UI.createView({
+	backgroundColor: "white",
+	height: 150,
+	top: 120,
+	left: 20,
+	right: 20,
+	borderRadius: 5	
+});
+
+//Now create a text a text Label to go inside of the above window view
+
+var textLabel = Ti.UI.createLabel({
+	text: "Click buttons below to start reading about the fruit we have available",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	textAlign: "center",
+	top: 25,
+	right: 25,
+	left: 25,
+	bottom: 25	
+});
+
+//Now create the first button view on the left, 'Previous' will be the new name
+
+var buttonViewPrevious = Ti.UI.createView({
+	backgroundColor: "#23ba00",
+	width: 100,
+	height: 50,
+	top: myTextView.top + myTextView.height + 15,
+	left: 20,
+	right: 20,
+	borderRadius: 5
+});
+
+//Now create the text for the left button
+
+var buttonTextPrevious = Ti.UI.createLabel({
+	color: "#fff",
+	font: {fontSize: 16, fontFamily: "Arial"},
+	textAlign: "left",
+	text: "Previous"	
+});
+
+//Now let's seprate the buttons into a left and right button, now called next and previous
+
+var buttonViewNext = Ti.UI.createView({
+	backgroundColor: "#23ba00",
+	width: 100,
+	height: 50,
+	top: myTextView.top + myTextView.height + 15,
+	right: 20,
+	borderRadius: 5
+});
+
+//Now create the text for the right button
+
+var buttonTextNext = Ti.UI.createLabel({
+	color: "#fff",
+	font: {fontSize: 16, fontFamily: "Arial"},
+	textAlign: "right",
+	text: "Next"	
+});
+
+
+//Now time to create the event listener for each of the buttons. We will start with the next button
+
+var displayItems = function(){
+	myTextView.hide();
+	
+	var topValue = 20;
+	
+	for(var i=0, j=fruit.length; i<j; i++){
+		var fruitLabel = Ti.UI.createLabel({
+			text: fruit[i],
+			backgroundColor: "white",
+			left: 20,
+			right: 20,
+			height: 35,
+			top: topValue,
+			borderRadius: 5
+		});
+
+		mainWindow.add(fruitLabel);
+		topValue = fruitLabel.top + fruitLabel.height + 10;
+	
+	}
+};
+
+//add an event listener to the next button, don't forget to call the function first as above.
+
+buttonViewNext.addEventListener("click", displayItems);
+
+//Now let's see what we have so far
+
+mainWindow.add(myTextView, buttonViewPrevious, buttonViewNext);
+myTextView.add(textLabel);
+buttonViewPrevious.add(buttonTextPrevious);
+buttonViewNext.add(buttonTextNext);
+mainWindow.open();
