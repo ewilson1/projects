@@ -1,5 +1,4 @@
 var food = ["Pasta", "Salad", "Apple", "Pizza"];
-var i=0;
 
 var displayItems = function(){
 	myTextView.hide();
