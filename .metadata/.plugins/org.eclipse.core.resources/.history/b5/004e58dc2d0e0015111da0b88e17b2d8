@@ -1,0 +1,93 @@
+var pHeight = Ti.Platform.displayCaps.platformHeight;
+var statusBar = 20;
+
+//Data
+var data ={
+	"Michelle's Immediate Family": [
+		{"name": "Aidan"}, 
+		{"name": "Eric"}, 
+		{"name": "Einstein"}, 
+		{"name": "Happy"},
+	],
+	"Michelle's Birth Family": [
+		{"name": "Mom"}, 
+		{"name": "Dad"}, 
+		{"name": "Glen"}, 
+		{"name": "Chris"},
+	],
+};
+
+//WINDOW
+var win = Ti.UI.createWindow({backgroundColor: "#fff"});
+
+//CUSTOM TABLE HEADER
+var tableHeader = Ti.UI.createView({
+	height: 50,
+	backgroundColor: ("#3c78b4"),
+});
+var headerText = Ti.UI.createLabel({
+	text: "Michelle's Family Tree",
+	font: {fontSize: 22, fontWeight: "bold"},
+	color: "#fff"
+});
+tableHeader.add(headerText);
+
+//TABLE
+var table = Ti.UI.createTabelView([
+	height = pHeight - statusBar,
+	top = statusBar,
+	style = Ti.UI.iPhone.TableViewStyle.GROUPED,
+	//headerTitle: "Michelle's Family Tree",
+	headerView = tableHeader,
+]);
+
+//SECTIONS AND ROWS
+var tableSections =[];
+for(n in data){
+	//CUSTOM HEADER
+	var customHeader = Ti.UI.createView({
+		height: 30,
+		backgroundColor: "#878787",
+	});
+	var chText = Ti.UI.createLabel({
+		text: n.toUpperCase(),
+		font: {fontSize: "16", fontWeight: "bold"},
+		color: "#fff",
+		left: 18,
+	});
+	cusotmHeader.add(chText);
+	
+	//CUSTOM FOOTER
+	var customFooter = Ti.UI.createView({
+		height: 50,
+		backgroundColor: "#efeff4"
+	});
+	var cfText = Ti.UI.creatView({
+		text: "Those she lives with now",
+		font: {fontSize: 12},
+		color: "#aaa",
+		left: 18,
+		top: 4
+	});
+	customFooter.add(cfText);
+	
+	var section = Ti.UI.createTableViewSection({
+		//headerTitle: n,
+		headerView: customHeader,
+		//footerTitle: "Those she lives with now",
+		footerView: customFooter,
+	});
+	for(var i=0, j=data[n].length; i<j; i++){
+		var row = Ti.UI.createTableViewRow({
+			title: data[n][i].name,
+			hasChild: true,
+		});
+		section.add(row);
+	}
+	tableSections.push(section);
+}
+
+//DISPLAY
+table.setData(tableSections);
+win.add(table);
+win.open();
