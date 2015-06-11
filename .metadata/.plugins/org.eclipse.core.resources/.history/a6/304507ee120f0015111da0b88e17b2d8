@@ -1,0 +1,26 @@
+var pHeight = Ti.Platform.displayCaps.platformHeight;
+var statusBar = 20;
+
+var win = Ti.UI.createWindow({backgroundColor: "#fff"});
+
+//CUSTOM TABLE HEADER
+var tableHeader = Ti.UI.createView({
+	height: 50,
+	backgroundColor: "#3c78b4",
+});
+var headerText = Ti.UI.createLabel({
+	text: "Michelle Valiquette Wilson",
+	font: {fontSize: 22, fontWieght: "bold"},
+	color: "#fff"
+});
+tableHeader.add(headerText);
+
+//TABLE
+var table = Ti.UI.createTableView({
+	height: pHeight - statusBar,
+	top: statusBar,
+	style: Ti.UI.iPhone.TableViewStyle.GROUPED,
+	headerView: tableHeader,
+});
+
+win.open();

@@ -1,4 +1,3 @@
-
 var valFamily = [{title: "Mom"}, {title: "Dad"}, {title: "Uncle Shark"}, {title: "Chris"}, {title: "Alex"}];
 var family = [{title: "Eric"}, {title: "Aidan"}, {title: "Happy"}];
 Titanium.UI.setBackgroundColor("#000");

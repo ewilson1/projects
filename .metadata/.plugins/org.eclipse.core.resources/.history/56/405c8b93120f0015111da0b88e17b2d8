@@ -1,0 +1,15 @@
+var win = Ti.UI.createWindow({backgroundColor: "#fff"});
+
+//CUSTOM TABLE HEADER
+var tableHeader = Ti.UI.createView({
+	height: 50,
+	backgroundColor: "#3c78b4",
+});
+var headerText = Ti.UI.createLabel({
+	text: "Michelle Valiquette Wilson",
+	font: {fontSize: 22, fontWieght: "bold"},
+	color: "#fff"
+});
+tableHeader.add(headerText);
+
+win.open();

@@ -1,0 +1,39 @@
+Titanium.UI.setBackgroundColor("000");
+
+//Data
+var family = [{title: "Eric"}, {title: "Aidan"}, {title: "Happy the dog"}];
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "#f5f5f5"
+});
+
+var titleView = Ti.UI.createView({
+	height: 65,
+	backgroundColor: "#fff",
+	top: 0
+});
+
+var border = Ti.UI.createView({
+	backgroundColor: "#dbdbdb",
+	height: 1,
+	top: titleView.height + titleView.top
+});
+
+var titleLabel =Ti.UI.createLabel({
+	text: "Michelle's Family",
+	font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
+	top: 30,
+	width: "100%",
+	textAlign: "center"
+});
+
+var people = Ti.UI.createTableView({
+	data: family,
+	top: border.top + border.height
+});
+
+//Display Windows and Views and text
+
+titleView.add(titleLabel);
+mainWindow.add(titleView, border, people);
+mainWindow.open();

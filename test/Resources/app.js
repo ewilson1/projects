@@ -1,0 +1,55 @@
+Titanium.UI.setBackgroundColor("000");
+
+//Data
+var family = [{title: "Eric"}, {title: "Aidan"}, {title: "Happy the dog"}];
+var buffalo = [{title: "Mom"}, {title: "Dad"}, {title: "Chris and Glen"}]; 
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "#f5f5f5"
+});
+
+var titleView = Ti.UI.createView({
+	height: 65,
+	backgroundColor: "#fff",
+	top: 0
+});
+
+var border = Ti.UI.createView({
+	backgroundColor: "#dbdbdb",
+	height: 1,
+	top: titleView.height + titleView.top
+});
+
+var titleLabel =Ti.UI.createLabel({
+	text: "Michelle's Family",
+	font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
+	top: 30,
+	width: "100%",
+	textAlign: "center"
+});
+
+var people = Ti.UI.createTableView({
+	top: border.top + border.height
+});
+
+if(Ti.Platform.name === "iPhone OS"){
+	people.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+}
+
+var familySection = Ti.UI.createTableViewSection({
+	headerTitle: "Florida Family",
+	footerTitle: "Not including Aunt Judy"
+});
+
+var buffaloSection = Ti.UI.createTableViewSection({
+	headerTitle: "Buffalo Family",
+	footerTitle: "Not including Aunts and Uncles"
+});
+
+var familySections = [familySection, buffaloSection];
+
+people.setData(familySections);
+
+titleView.add(titleLabel);
+mainWindow.add(titleView, border, people);
+mainWindow.open();
