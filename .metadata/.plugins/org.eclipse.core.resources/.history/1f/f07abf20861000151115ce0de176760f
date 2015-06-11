@@ -77,7 +77,6 @@ var getDetail = function(){
 	});
 	
 	var closeButton = Ti.UI.createLabel({
-		text: "Close Window",
 		backgroundColor: "333",
 		color: "fff",
 		height: 50,
@@ -88,7 +87,7 @@ var getDetail = function(){
 	});
 	
 	var closeWindow = function(){
-		detailWindow.close({transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT});
+		detailWindow.close();
 	};
 	
 	closeButton.addEventListener("click", closeWindow);
@@ -96,7 +95,7 @@ var getDetail = function(){
 	detailTitleView.add(detailTitleLabel);
 	detailWindow.add(detailTitleView, detailBorder, detailText, closeButton);
 	
-	detailWindow.open({transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT});
+	detailWindow.open();
 	
 };
 
