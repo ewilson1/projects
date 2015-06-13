@@ -1,0 +1,62 @@
+var pHeight = Ti.Platform.displayCaps.platformHeight;
+var statusBar = 20;
+
+var win = Ti.UI.createWindow({backgroundColor: "#fff"});
+
+//DESCRIPTION CUSTOM TABLE HEADER
+var descTableHeader = Ti.UI.createView({
+	height: 50,
+	backgroundColor: "#3c78b4",
+});
+var descHeaderText = Ti.UI.createLabel({
+	text: "Michelle Valiquette Wilson",
+	font: {fontSize: 22, fontWieght: "bold"},
+	color: "#fff"
+});
+descTableHeader.add(descHeaderText);
+
+//DESCRIPTION TABLE
+var descTable = Ti.UI.createTableView({
+	height: pHeight - statusBar,
+	top: statusBar,
+	style: Ti.UI.iPhone.TableViewStyle.GROUPED,
+	headerView: descTableHeader,
+});
+
+win.add(descTable);
+win.open();
+
+var tableSections =[];
+ //for loop
+ for(name in data){
+ 	//CUSTOM HEADER for the ARRAYS, not the header for the page!
+ 	var customHeader = Ti.UI.createView({
+ 		height: 30,
+ 		backgroundColor: "878787",
+ 	});
+ 	var chText = Ti.UI.createLabel({
+ 		text: "Her Family",
+ 		font: {fontSize: 16, fontWeight: "bold"},
+ 		color: "#fff",
+ 		left: 18,
+ 	});
+ 	customHeader.add(chText);
+ 	
+ 	//CUSTOM FOOTER
+ 	var customFooter = Ti.UI.createView({
+ 		height: 50,
+ 		backgroundColor: "#efeff4",
+ 	});
+ 	var cfText = Ti.UI.createLabel({
+ 		text: "Not Including Parents, Brothers, Aunts and Uncles",
+ 		font: {fontSize: 12},
+ 		color: "aaa",
+ 		left: 18,
+ 		top: 4
+ 	});
+ 	customFooter.add(cfText);
+ 	
+ 	var section = Ti.UI.createTableViewSection({
+ 		headerView: customHeader,
+ 		footerView: customFooter,
+ 	});

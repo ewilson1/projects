@@ -1,4 +1,6 @@
 Titanium.UI.setBackgroundColor("000");
+var pHeight = Ti.Platform.displayCaps.platformHeight;
+var statusBar = 20;
 
 //Data
 var family = [
@@ -7,9 +9,7 @@ var family = [
 {title: "Happy the dog", descripton:"This pain in the butt came home one day according to Aidan and is great with Adults. Around new people or especially kids, he is the spawn of Hell."}
 ];
 
-var mainWindow = Ti.UI.createWindow({
-	backgroundColor: "#f5f5f5"
-});
+var mainWindow = Ti.UI.createWindow({backgroundColor: "#f5f5f5"});
 
 var titleView = Ti.UI.createView({
 	height: 65,

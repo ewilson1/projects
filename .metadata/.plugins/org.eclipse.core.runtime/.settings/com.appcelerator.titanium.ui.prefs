@@ -1,5 +1,5 @@
 =run
-LAST_LAUNCH_TIMESTAMP=1434045455005
+LAST_LAUNCH_TIMESTAMP=1434122777600
 Wilson_Eric_Project1\:launchMode=run
 Wilson_Eric_Project1\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.AB03F211-7DC4-4F2C-BC97-B1C691B4E1EC
 Windows\:launchMode=run
@@ -9,6 +9,8 @@ add\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.lau
 eclipse.preferences.version=1
 help\:launchMode=run
 help\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.simulator.launchShortcut.titanium_1_WVGA800
+navigation\:launchMode=run
+navigation\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.D60F4F30-BC01-4199-BD74-F322D4560FBA
 preference.show.console.onError=true
 preference.studio.perspective.version=103
 seperate\:launchMode=run

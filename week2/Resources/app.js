@@ -33,41 +33,39 @@ var table = Ti.UI.createTableView({
 	headerView: tableHeader,
 });
 
-//SECTIONS & ROWS
- var tableSections =[];
- //for loop
+var tableSections =[];
  for(name in data){
  	//CUSTOM HEADER for the ARRAYS, not the header for the page!
- 	var customHeader = Ti.UI.createView({
- 		height: 30,
- 		backgroundColor: "878787",
- 	});
- 	var chText = Ti.UI.createLabel({
- 		text: "Her Family",
- 		font: {fontSize: 16, fontWeight: "bold"},
- 		color: "#fff",
- 		left: 18,
- 	});
- 	customHeader.add(chText);
+ var customHeader = Ti.UI.createView({
+ 	height: 30,
+ 	backgroundColor: "878787",
+});
+var chText = Ti.UI.createLabel({
+ 	text: "Her Family",
+ 	font: {fontSize: 16, fontWeight: "bold"},
+ 	color: "#fff",
+ 	left: 18,
+ });
+ customHeader.add(chText);
  	
- 	//CUSTOM FOOTER
- 	var customFooter = Ti.UI.createView({
- 		height: 50,
- 		backgroundColor: "#efeff4",
- 	});
- 	var cfText = Ti.UI.createLabel({
- 		text: "Not Including Parents, Brothers, Aunts and Uncles",
- 		font: {fontSize: 12},
- 		color: "aaa",
- 		left: 18,
- 		top: 4
- 	});
+//CUSTOM FOOTER
+var customFooter = Ti.UI.createView({
+ 	height: 50,
+ 	backgroundColor: "#efeff4",
+});
+var cfText = Ti.UI.createLabel({
+ 	text: "Not Including Parents, Brothers, Aunts and Uncles",
+ 	font: {fontSize: 12},
+ 	color: "aaa",
+ 	left: 18,
+ 	top: 4
+ });
  	customFooter.add(cfText);
  	
- 	var section = Ti.UI.createTableViewSection({
- 		headerView: customHeader,
- 		footerView: customFooter,
- 	});
+var section = Ti.UI.createTableViewSection({
+ 	headerView: customHeader,
+ 	footerView: customFooter,
+});
  	
 //Define Function
 var getDetail = function(){
@@ -88,9 +86,7 @@ var getDetail = function(){
  	
  	detailWindow.add(detailWindow, detailCustomHeader, detailChText);
  	detailWindow.open();
- };
- 	
- 	
+ }; 	
  	//for loop
  	for(var i=0, j=data[name].length; i<j; i++){
  		var row = Ti.UI.createTableViewRow({

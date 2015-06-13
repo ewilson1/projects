@@ -1,0 +1,20 @@
+//JSON OBJECT
+var family = 	{
+	"Floirda": 	{
+		"theTitle": "Heathrow",
+		"familyList": [
+				{
+					"name": "Eric",
+					"description": "Eric is a superhuman known to his son as the Hulk. Michelle was unaware of this phenomenon at the start, but has come to like this version of Eric much better than the old name of Santa Claus."
+				},
+				{
+					"name": "Aidan",
+					"description": "This miracle of life has been know to cause all kind of havoc, while at the same time holding a special place in Michelle's heart. He is 10 years old, but has an old soul that many have commented on as precious."
+				},
+				{
+					"name": "Happy, the dog",
+					"description": "This pain in the butt came home one day according to Aidan and is great with Adults. Around new people or especially kids, he is the spawn of Hell."
+				},
+		]	
+	}
+};
