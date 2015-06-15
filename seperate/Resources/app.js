@@ -5,16 +5,6 @@ var win = Ti.UI.createWindow({
 	title: "Family Tree",
 	backgroundColor: "#dadada"
 });
-
- 	for(var i=0, j=data[name].length; i<j; i++){
- 		var row = Ti.UI.createTableViewRow({
- 			title: data[name][i].name,
- 			hasDetail: true,
- 		});
- 		section.add(row);
- 		row.addEventListener("click", getDetail);
- 	}
- 	tableSections.push(section);
 //JSON OBJECT
 var family = 	{
 	"florida": 	{
@@ -66,27 +56,6 @@ var headerText = Ti.UI.createLabel({
 });
 tableHeader.add(headerText);
 
-
- 	//CUSTOM FOOTER
- 	var customFooter = Ti.UI.createView({
- 		height: 50,
- 		backgroundColor: "#efeff4",
- 	});
- 	var cfText = Ti.UI.createLabel({
- 		text: "Not Including Parents, Brothers, Aunts and Uncles",
- 		font: {fontSize: 12},
- 		color: "aaa",
- 		left: 18,
- 		top: 4
- 	});
- 	customFooter.add(cfText);
- 	
- 	var section = Ti.UI.createTableViewSection({
-
- 		footerView: customFooter,
- 	});
- 	
- 	
 //CREATE A TABLE VIEW FOR THE CUSTOM HEADER
 var table = Ti.UI.createTableView({
 	height: pHeight - statusBar,
@@ -96,7 +65,6 @@ var table = Ti.UI.createTableView({
 });
 
 win.add(table);
-
 
 var navWindow = Ti.UI.iOS.createNavigationWindow({
 	window: win
@@ -143,7 +111,6 @@ var makeUI = function(){
 				backgroundColor: "#fff",
 				font: {fontSize: 22, fontFamily: "Arial"},
 				color: "#333",
-				
 			});
 			
 			win.add(itemLabel);
