@@ -149,8 +149,10 @@ for(var i in family){
 		}
 	}
 };
+						family.add(theRow);
+						theRow.addEventListener("click", getRowDetail);
+
 
 titleView.add(titleLabel);
-mainWindow.add(titleView, border, people, theRow);
-theRow.addEventListener("click", getRowDetail);
+mainWindow.add(titleView, border, people);
 navWindow.open();
