@@ -23,7 +23,7 @@ var viewContainer = Ti.UI.createScrollView({
 	top: 0,
 	layout: "horizontal",
 	width: pWidth,
-	contentWidth: pWidth,
+	contentHeight: pWidth,
 	height: pHeight-border.height-border.top,
 	showVerticalScrollIndicator: true,
 	backgroundColor: "#fef",
