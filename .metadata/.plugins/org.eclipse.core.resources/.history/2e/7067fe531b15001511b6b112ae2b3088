@@ -3,9 +3,9 @@ var pHeight = Ti.Platform.displayCaps.platformHeight;
 var itemCount = 30;
 var rowCount = 3;
 var margin = 10;
-var trueCanvasWidth = (pWidth - margin*4);
-var size = (trueCanvasWidth/3);
-	
+var trueCanvasWidth = pWidth - margin + rowCount;
+var size = (top = 85, left = 85);
+
 
 var mainWin = Ti.UI.createWindow({
 	backgroundColor: "#fff",
@@ -34,8 +34,8 @@ for(var i=0; i<itemCount; i++){
 		backgroundColor: "#33ccff",
 		top: margin,
 		left: margin,
-		width: size,
-		height: size,
+		//width: size,
+		//height: size,
 	});
 	var text = Ti.UI.createLabel({text: i+1, color: "#fff"});
 	view.add(text);
