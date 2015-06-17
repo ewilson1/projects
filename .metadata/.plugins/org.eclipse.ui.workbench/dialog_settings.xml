@@ -17,5 +17,9 @@
 		<item value="291" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="ImportExportAction">
+		<item value="com.appcelerator.titanium.ui.import.wizard" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="com.appcelerator.titanium.import.wizard.category"/>
+		</list>
 	</section>
 </section>
