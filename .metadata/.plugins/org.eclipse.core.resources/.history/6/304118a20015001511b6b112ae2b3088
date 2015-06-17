@@ -3,8 +3,8 @@ var pHeight = Ti.Platform.displayCaps.platformHeight;
 var itemCount = 15;
 var rowCount = 3;
 var margin = 10;
-var trueCanvasWidth = pWidth - margin + rowCount;
-var size = (top = 85, left = 85);
+var trueCanvasWidth = pWidth - margin;
+var size = top = 233; left = 233;
 
 
 var mainWin = Ti.UI.createWindow({
