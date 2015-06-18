@@ -2,7 +2,7 @@
 1-event.propagation\:launchMode=run
 1-event.propagation\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.F9FF722C-9B55-4AFA-99F7-FA15005D7E8C
 2-layout.modes\:launchMode=run
-2-layout.modes\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.AB03F211-7DC4-4F2C-BC97-B1C691B4E1EC
+2-layout.modes\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.F9FF722C-9B55-4AFA-99F7-FA15005D7E8C
 3-scroll.views\:launchMode=run
 3-scroll.views\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.AB03F211-7DC4-4F2C-BC97-B1C691B4E1EC
 4-image.views\:launchMode=run
