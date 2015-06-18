@@ -139,9 +139,3 @@ people.addEventListener("click", function(event){
 titleView.add(titleLabel);
 mainWindow.add(titleView, border, people);
 mainWindow.open();
-
-// Conclusion: it runs the same, laods a new window with our data. It behaves the same way visually but if functions
-//very differently. We are not adding eventlisteners to all of our rows anymore, we are using event propagation by
-//having just one object listen for the event so we have only one event listener and it determines what object we 
-//clicked on. By being able to do that we can pass that information into our function and then 'get' the information
-//we need for all of our sections, for all of our 'title' and our 'description'

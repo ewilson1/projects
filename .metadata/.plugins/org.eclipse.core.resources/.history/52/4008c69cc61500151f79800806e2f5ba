@@ -44,10 +44,7 @@ var familySection = Ti.UI.createTableViewSection({
 	footerTitle: "Not including Aunt Judy"
 });
 
-//dataSource is the same thing as the event.source found at the bottom.
-//the dataSource is our row, which has a title and a description
-
-var getDetail = function(dataSource){
+var getDetail = function(){
 	var detailWindow = Ti.UI.createWindow({
 		backgroundColor: "#f5f5f5"
 	});
@@ -64,9 +61,7 @@ var getDetail = function(dataSource){
 	});
 	
 	var detailTitleLabel =Ti.UI.createLabel({
-		//make sure you pass dataSource in place of 'this'.title below, and anywhere we use 'this' replace it with 
-		//dataSourcce instead
-		text: dataSource.title,
+		text: this.title,
 		font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
 		top: 30,
 		width: "100%",
@@ -74,8 +69,7 @@ var getDetail = function(dataSource){
 	});
 	
 	var detailText = Ti.UI.createLabel({
-		//here is another place where dataSource is put in place of 'this' command.
-		text: dataSource.desc,
+		text: this.desc,
 		font: {fontSize: 14, fontFamily: "Arial"},
 		top: detailBorder.height + detailBorder.top + 40,
 		left: 10,
@@ -120,7 +114,7 @@ for(var i=0, j=family.length; i<j; i++){
 	
 	
 	familySection.add(theRow);
-	//theRow.addEventListener("click", getDetail);
+	theRow.addEventListener("click", getDetail);
 
 }
 
@@ -128,20 +122,6 @@ var familySections = [familySection];
 
 people.setData(familySections);
 
-//We have now created a smart event listener using a method call event propagation where the event listener 
-//can determine what it is that we clicked on. Now that we have this information we go ahead and call out the get Detail function
-
-people.addEventListener("click", function(event){
-	getDetail(event.source);//make sure you go up and call the getDetail function and call it our data.source
-	//console.log(event.source.title);
-});
-
 titleView.add(titleLabel);
 mainWindow.add(titleView, border, people);
 mainWindow.open();
-
-// Conclusion: it runs the same, laods a new window with our data. It behaves the same way visually but if functions
-//very differently. We are not adding eventlisteners to all of our rows anymore, we are using event propagation by
-//having just one object listen for the event so we have only one event listener and it determines what object we 
-//clicked on. By being able to do that we can pass that information into our function and then 'get' the information
-//we need for all of our sections, for all of our 'title' and our 'description'
