@@ -24,8 +24,8 @@ var pHeight = Ti.Platform.displayCaps.platformHeight;
 //adding the .length property to the string
 var rowCount = 3;
 var margin = 10;
-var trueCanvasWidth = (pWidth - margin*5);
-var size = (trueCanvasWidth/4);
+var trueCanvasWidth = (pWidth - margin*4);
+var size = (trueCanvasWidth/3);
 	
 
 var mainWin = Ti.UI.createWindow({
@@ -70,7 +70,7 @@ for(var i=0; i<imageFiles.length; i++){
 		image: "images/" + imageFiles[i],
 		//because the images are not filling the spaces, we are creating some scaleing to the 'thumb' Image view
 		top: 0,
-		width: view.width*2
+		width: veiw.width*2
 		//so we are moving the image up to the top, and doubling its size (width)
 		
 	});
