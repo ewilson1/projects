@@ -1,6 +1,6 @@
 var pWidth = Ti.Platform.displayCaps.platformWidth;
 var pHeight = Ti.Platform.displayCaps.platformHeight;
-var imageFiles = ["lightning-storm.jpg", "lightning1.jpg", "lightning2.jpg", "lightning3.jpg", "lightning4.jpg"];
+var imageFiles = ["lightning storm.jpg", "lightning1.jpg", "lightning2.jpg", "lightning3.jpg", "lightning4.jpg"];
 // we are creating an array and connecting it to a view (the for loop below) using 'imageFiles' as the new term and 
 //adding the .length property to the string
 
