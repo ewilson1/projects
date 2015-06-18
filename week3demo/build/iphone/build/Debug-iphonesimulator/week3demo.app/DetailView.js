@@ -1,1 +1,0 @@
-/Users/ericwilson1/Desktop/VFW/projects/week3demo/Resources/DetailView.js

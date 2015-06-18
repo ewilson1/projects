@@ -1,3 +1,12 @@
+//var imagesFolder = Ti.Filesystem.getFile(Ti.UI.Filesystem.resourcesDirectory, "Images");
+//var imageFiles = imagesFolder.getDirectoryListing();
+
+//console.log(imageFiles);
+
+
+
+
+
 var pWidth = Ti.Platform.displayCaps.platformWidth;
 var pHeight = Ti.Platform.displayCaps.platformHeight;
 var itemCount = 30;
