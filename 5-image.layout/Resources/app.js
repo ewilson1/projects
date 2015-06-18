@@ -1,7 +1,9 @@
 var pWidth = Ti.Platform.displayCaps.platformWidth;
 var pHeight = Ti.Platform.displayCaps.platformHeight;
 var imageFiles = ["lightning storm.jpg", "lightning1.jpg", "lightning2.jpg", "lightning3.jpg", "lightning4.jpg"];
-var itemCount = 30;
+// we are creating an array and connecting it to a view (the for loop below) using 'imageFiles' as the new term and 
+//adding the .length property to the string
+
 var rowCount = 3;
 var margin = 10;
 var trueCanvasWidth = (pWidth - margin*4);
@@ -31,7 +33,7 @@ var viewContainer = Ti.UI.createScrollView({//adding the word 'Scroll' to the vi
 	backgroundColor: "#fef",
 });
 
-for(var i=0; i<itemCount; i++){
+for(var i=0; i<imageFiles.length; i++){
 	var view = Ti.UI.createView({
 		backgroundColor: "#33ccff",
 		top: margin,
@@ -39,8 +41,17 @@ for(var i=0; i<itemCount; i++){
 		width: size,
 		height: size,
 	});
-	var text = Ti.UI.createLabel({text: i+1, color: "#fff"});
-	view.add(text);
+	//we are going to create an image view for each one of these views
+	var thumb = Ti.UI.createImageView({
+		//once again, we are using the 'image' property to call up the image
+		//the images themselves are stored in the imageFiles array (up top), so we will use that
+		//this will return the file names. Remember, our files are located inside a folder
+		//called 'images'. So we need to add a prefix and define where the images are kept.
+		//so we call up in ""'s the folder name with a / and then concatenate
+		image: "images/" + imageFiles[i]
+	});
+	//we also need to add out new image into the view
+	view.add(thumb);
 	viewContainer.add(view);
 }
 
