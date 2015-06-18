@@ -21,8 +21,7 @@ var border = Ti.UI.createView({
 
 //This is the Parent container. We want to add a layout property to the Parent container, viewContainer in this case.
 var viewContainer = Ti.UI.createView({
-	top: 0,//because of our horizontal layout. This is important to note, you have added a value of top:0 because
-	//you have added a value of horizontal to it's parent view (above) in the mainWin window.
+	top: 0,
 	width: pWidth,
 	backgroundColor: "#fef",
 	//we have two choices with our layout view, vertical and horizontal.
