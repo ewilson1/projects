@@ -24,5 +24,3 @@ var newImage = Ti.UI.createImageView({
 
 mainWin.add(newImage);
 mainWin.open();
-
-//its auto-filling the size because we did not specify a size, the borderRadius is applied along with the left and right space
