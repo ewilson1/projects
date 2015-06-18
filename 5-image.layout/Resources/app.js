@@ -40,6 +40,7 @@ for(var i=0; i<imageFiles.length; i++){
 		left: margin,
 		width: size,
 		height: size,
+		borderRadius: 20
 	});
 	//we are going to create an image view for each one of these views
 	var thumb = Ti.UI.createImageView({
