@@ -1,3 +1,4 @@
+
 //There is a way to collect and look inside the file containing all the images; this would create an array for us that
 //we can work with to do the same thing as having to type out all the images and calling if from an array we type out
 //this method (below) is going to instruct Titanium to get a file or directory from our filesystem
@@ -26,7 +27,12 @@ var rowCount = 3;
 var margin = 10;
 var trueCanvasWidth = (pWidth - margin*5);
 var size = (trueCanvasWidth/4);
-	
+
+var win2 = Titanium.UI.createWindow({  
+    title:'Tab 2',
+    backgroundColor:'#fff',
+ });
+
 
 var mainWin = Ti.UI.createWindow({
 	backgroundColor: "#fff",
