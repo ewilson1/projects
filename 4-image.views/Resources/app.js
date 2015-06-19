@@ -20,9 +20,15 @@ var newImage = Ti.UI.createImageView({
 	borderRadius: 10
 });
 
+var header = Ti.UI.createLabel({
+	text: "Hello",
+	font: [fontSize = 20, fontType = "Arial",],
+	fontAlign: "center"
+});
+
 //just like Views and Labels we are going to have to add these to a View or a Window
 
-mainWin.add(newImage);
+mainWin.add(newImage, header);
 mainWin.open();
 
 //its auto-filling the size because we did not specify a size, the borderRadius is applied along with the left and right space

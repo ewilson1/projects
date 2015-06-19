@@ -20,9 +20,6 @@ console.log(imageFiles);
 
 var pWidth = Ti.Platform.displayCaps.platformWidth;
 var pHeight = Ti.Platform.displayCaps.platformHeight;
-//var imageFiles = ["lightning-storm.jpg", "lightning1.jpg", "lightning2.jpg", "lightning3.jpg", "lightning4.jpg"];
-// we are creating an array and connecting it to a view (the for loop below) using 'imageFiles' as the new term and 
-//adding the .length property to the string
 var rowCount = 3;
 var margin = 10;
 var trueCanvasWidth = (pWidth - margin*5);
@@ -33,12 +30,12 @@ var mainWin = Ti.UI.createWindow({
 	backgroundColor: "#fff",
 	layout: "horizontal"
 });
-
 var border = Ti.UI.createView({
 	backgroundColor: "#cecece",
 	height: 1,
 	width: pWidth,
 	top: 20,
+	align: "Center"
 });
 
 var viewContainer = Ti.UI.createScrollView({//adding the word 'Scroll' to the view; yet they scroll across and not down.
@@ -51,6 +48,13 @@ var viewContainer = Ti.UI.createScrollView({//adding the word 'Scroll' to the vi
 	showVerticalScrollIndicator: true,//this is a boolean value
 	backgroundColor: "#fef",
 });
+
+var header = Ti.UI.createLabel({
+	text: "Weather",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	width: size
+});
+
 
 for(var i=0; i<imageFiles.length; i++){
 	var view = Ti.UI.createView({
@@ -75,11 +79,11 @@ for(var i=0; i<imageFiles.length; i++){
 		//so we are moving the image up to the top, and doubling its size (width)
 		
 	});
-	//we also need to add out new image into the view
+	//we also need to add our new image into the view
 	view.add(thumb);
 	viewContainer.add(view);
 }
 
-mainWin.add(border);
+mainWin.add(border, header);
 mainWin.add(viewContainer);
 mainWin.open();
