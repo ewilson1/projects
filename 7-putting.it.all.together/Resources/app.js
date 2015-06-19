@@ -32,7 +32,7 @@ var mainWin = Ti.UI.createWindow({
 });
 
 var header = Ti.UI.createLabel({
-	text: "Weather",
+	text: "Weather From Around The World",
 	textAlign: "center",
 	font: {fontSize: 20, fontFamily: "Arial"},
 	height: 30,
