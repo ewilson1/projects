@@ -28,14 +28,21 @@ var size = (trueCanvasWidth/4);
 
 var mainWin = Ti.UI.createWindow({
 	backgroundColor: "#fff",
-	layout: "horizontal"
+	layout: "vertical"
 });
+
+var header = Ti.UI.createLabel({
+	text: "Weather",
+	textAlign: "center",
+	font: {fontSize: 20, fontFamily: "Arial"},
+	height: 30,
+});
+
 var border = Ti.UI.createView({
 	backgroundColor: "#cecece",
 	height: 1,
 	width: pWidth,
 	top: 20,
-	align: "Center"
 });
 
 var viewContainer = Ti.UI.createScrollView({//adding the word 'Scroll' to the view; yet they scroll across and not down.
@@ -49,11 +56,7 @@ var viewContainer = Ti.UI.createScrollView({//adding the word 'Scroll' to the vi
 	backgroundColor: "#fef",
 });
 
-var header = Ti.UI.createLabel({
-	text: "Weather",
-	font: {fontSize: 20, fontFamily: "Arial"},
-	width: size
-});
+
 
 
 for(var i=0; i<imageFiles.length; i++){
