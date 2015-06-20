@@ -25,6 +25,19 @@ var margin = 10;
 var trueCanvasWidth = (pWidth - margin*5);
 var size = (trueCanvasWidth/4);
 
+
+var closeButton = Ti.UI.createLabel({
+	text: "Close Window",
+	backgroundColor: "d3d3d3",
+	color: "grey",
+	height: 50,
+	font: {fontSize: 16, fontFamily: "Arial"},
+	width: "100%",
+	bottom: 0,
+	textAlign: "center",
+});
+
+
 var viewContainer = Ti.UI.createScrollView({
 	top: 0,
 	layout: "horizontal",
@@ -53,7 +66,7 @@ for(var i=0; i<imageFiles.length; i++){
 	});
 	//we also need to add our new image into the view
 	view.add(thumb);
-	viewContainer.add(view);
+	viewContainer.add(view, closeButton);
 };
 
-var pictures = require("FullScreen");
+
