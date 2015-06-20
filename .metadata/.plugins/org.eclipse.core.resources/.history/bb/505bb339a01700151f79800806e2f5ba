@@ -1,19 +1,19 @@
-//declare a variable to run a function, then another variable for the window
 var weatherPage = function(){
 	var weatherWindow = Ti.UI.createWindow({
 		title: "Weather"
 	});
+
+
 	weatherWindow.add(viewContainer);
-	//don't forget to call the navigation window from the first page and load the new variable window name
 	navWindow.openWindow(weatherWindow);
+
 };
 
-//add event listener here, there will be another event listener at the bottom of the page
 openView.addEventListener("click", weatherPage);
 
 var imagesFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "images");
 var imageFiles = imagesFolder.getDirectoryListing();
-
+console.log(imageFiles);
 
 var pWidth = Ti.Platform.displayCaps.platformWidth;
 var pHeight = Ti.Platform.displayCaps.platformHeight;
@@ -29,6 +29,7 @@ var viewContainer = Ti.UI.createScrollView({
 	contentWidth: pWidth,
 	showVerticalScrollIndicator: true,
 	backgroundColor: "#fef",
+	
 });
 
 for(var i=0; i<imageFiles.length; i++){
@@ -45,10 +46,11 @@ for(var i=0; i<imageFiles.length; i++){
 		image: "images/" + imageFiles[i],
 		top: 0,
 		width: view.width*2
+		
 	});
 	//we also need to add our new image into the view
 	view.add(thumb);
 	viewContainer.add(view);
 };
-//this is where you add the second event listener for the 3rd .js file, in this case the FullScreen.js file
+
 viewContainer.addEventListener("click", pictures.dostuff);
