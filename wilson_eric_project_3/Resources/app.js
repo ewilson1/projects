@@ -1,11 +1,13 @@
 Ti.UI.setBackgroundColor("fff");
-
+//var navWindow;
 //create a window to hold the Navigation window
 var mainWindow = Ti.UI.createWindow({
-	backgroundImage: "Weather-Background.jpg",
-	top: 20
+	title: "Eric Wilson's Weather",
+	backgroundImage: "Weather-Background.jpg"	
 });
-
+	var navWindow = Ti.UI.iOS.createNavigationWindow({
+		window: mainWindow
+	});
 
 //declare a variable to create the view, which will hold the text
 var openView = Ti.UI.createView({
@@ -29,13 +31,17 @@ var openText = Ti.UI.createLabel({
 openView.add(openText);
 
 //declare a variable to call (look for a 'click') a second .js page
+
+var pictures = require("FullScreen");
+
 var weather = require("Weather_Gallery");
+
 //add event listener to open the next page
 //openView.addEventListener("click", weatherWindow);
 
 //add the View to the main window
 mainWindow.add(openView);
 //open the main window
-mainWindow.open();
+navWindow.open();
 
 //openView.addEventListener("click", weatherPage);

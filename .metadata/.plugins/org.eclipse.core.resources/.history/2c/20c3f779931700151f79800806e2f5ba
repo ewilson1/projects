@@ -1,0 +1,10 @@
+
+var bigPic = function(event){
+	var wxPic = Ti.UI.createWindow({
+		backgroundImage: "Weather-Background.jpg",
+		title: event.source.image
+	});
+	navWindow.openWindow(wxPic);
+};
+
+exports.dostuff = bigPic;

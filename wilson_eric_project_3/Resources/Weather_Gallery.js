@@ -1,14 +1,11 @@
-//declare a variable to hold a function for the weatherWindow
 var weatherPage = function(){
 	var weatherWindow = Ti.UI.createWindow({
-		title: "Weather Gallery"
+		title: "Weather"
 	});
 
-	var navWindow = Ti.UI.iOS.createNavigationWindow({
-		window: weatherWindow
-	});
+
 	weatherWindow.add(viewContainer);
-	navWindow.open();
+	navWindow.openWindow(weatherWindow);
 
 };
 
@@ -56,4 +53,4 @@ for(var i=0; i<imageFiles.length; i++){
 	viewContainer.add(view);
 };
 
-var pictures = require("FullScreen");
+viewContainer.addEventListener("click", pictures.dostuff);
