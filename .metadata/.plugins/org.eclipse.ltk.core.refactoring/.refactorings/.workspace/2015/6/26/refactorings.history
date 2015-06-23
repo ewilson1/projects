@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;week-4-practice/Resources/scrollbar&apos;" deleteContents="false" description="Delete resource &apos;week-4-practice/Resources/scrollbar&apos;" element1="/week-4-practice/Resources/scrollbar" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1435087298371"/>
+</session>

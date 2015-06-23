@@ -1,0 +1,18 @@
+// this sets the background color of the master UIView (when there are no windows/tab groups on it)
+Titanium.UI.setBackgroundColor('#000');
+
+var win = Ti.UI.createWindow({
+  backgroundColor: 'white'
+});
+
+var textField = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  color: '#336699',
+  top: 'center',
+  width: "100%, 
+  height: 160
+});
+
+win.add(textField);
+win.open();
+

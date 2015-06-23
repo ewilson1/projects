@@ -16,4 +16,3 @@ var bigPic = function(event){
 //you get to this point. Exports allow you to overcome the constraints of not being allowed to move backward between .js files
 exports.dostuff = bigPic;
 
-
