@@ -1,0 +1,43 @@
+Ti.UI.setBackgroundColor("fff");
+
+//Data for the table view
+var menu = [{title: "Random Weather Images"}, {title: "The Weatherman's Family"}, {title: "Interactive Weather"}];
+
+
+//create a window to hold the Navigation window
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "white"
+});
+
+var titleView = Ti.UI.createView({
+	height: 65,
+	top: 0
+});
+
+var border = Ti.UI.createView({
+	backgroundColor: "dbdbdb",
+	hieght: 1,
+	top: titleView.top + titleView.height
+});
+
+var titleLabel = Ti.UI.createLabel({
+	text: "Eric Wilson's Weather Page",
+	font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
+	top: 30,
+	width: "100%",
+	textAlign: "center"
+});
+
+var weatherTable = Ti.UI.createTableView({
+	top: border.top + border.height
+});
+
+if(Ti.Platform.name === "iPhone OS"){
+	menu.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+}
+
+weatherTable.setData(menu);
+
+titleView.add(titleLabel);
+mainWindow.add(titleView, border, weatherTable);
+mainWindow.open();

@@ -1,29 +1,28 @@
-Ti.UI.setBackgroundColor("fff");
+Titanium.UI.setBackgroundImage; "Weather-Background.jpg";
 
-//create a window to hold the Navigation window
+//Data for the table view
+var menu = [{title: "Random Weather Images"}, {title: "The Weatherman's Family"}, {title: "Interactive Weather"}];
+
 var mainWindow = Ti.UI.createWindow({
 	title: "Eric Wilson's Weather",
-	//top: 0,
-	//height: 10,
-	backgroundImage: "Weather-Background.jpg"	
+		
 });
 	var navWindow = Ti.UI.iOS.createNavigationWindow({
-		window: mainWindow
-	});
-		var view1 = Ti.UI.createView({
-		  backgroundColor: 'white',
-		  //top: mainWindow.top + 20,
-		  height: 100,
-		  width: 300,
-		  borderRadius: 20
-		});
+		window: mainWindow,
 		
-		var label1 = Ti.UI.createLabel({
-			text: "Click to open up the Menu",
-			textAlign: "center"
-		});
-		view1.add(label1);
+	});
 
-//add the label, open the main window
-navWindow.add(view1);
+var weatherTable = Ti.UI.createTableView({
+	top: navWindow.height + navWindow.top,
+	backgroundImage: "Weather-Background.jpg"
+});
+
+if(Ti.Platform.name === "iPhone OS"){
+	weatherTable.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+};
+
+weatherTable.setData(menu);
+
+mainWindow.add(weatherTable);
+mainWindow.open();
 navWindow.open();
