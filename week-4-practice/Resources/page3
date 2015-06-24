@@ -1,0 +1,33 @@
+var win1 = Ti.UI.createWindow({
+	backgroundColor: "white",
+});
+
+var send = Ti.UI.createButton({
+    style : Ti.UI.iPhone.SystemButtonStyle.DONE,
+    title : 'Send'
+});
+
+var camera = Ti.UI.createButton({
+    systemButton : Ti.UI.iPhone.SystemButton.CAMERA
+});
+
+var cancel = Ti.UI.createButton({
+    systemButton : Ti.UI.iPhone.SystemButton.CANCEL
+});
+
+var flexSpace = Ti.UI.createButton({
+    systemButton : Ti.UI.iPhone.SystemButton.FLEXIBLE_SPACE
+});
+
+var textarea = Ti.UI.createTextArea({
+    borderColor : '#000',
+    color : '#000',
+    keyboardToolbar : [cancel, flexSpace, camera, flexSpace, send],
+    keyboardToolbarColor : '#999',
+    keyboardToolbarHeight : 40,
+    value : 'Focus to see keyboard with toolbar',
+    top : 10,
+    width : 300, height : 120
+});
+win1.add(win1, textarea);
+win1.open(),

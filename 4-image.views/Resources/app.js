@@ -1,5 +1,8 @@
+Titanium.UI.setBackgroundColor('#fff');
+
 var mainWin = Ti.UI.createWindow({
-	backgroundColor: "#ffff",
+	backgroundImage: "Weather-Background.jpg",
+	top: 20,
 	layout: "horizontal"
 });
 
@@ -12,23 +15,38 @@ var mainWin = Ti.UI.createWindow({
 
 //so, before calling the actual image itself, you have to point it to the correct folder. The folder name is images
 
-var newImage = Ti.UI.createImageView({
-	image: "images/lightning1.jpg",
-	left: 10,
-	right: 10,
-	top: 20,
-	borderRadius: 10
+
+var send = Ti.UI.createButton({
+    style : Ti.UI.iPhone.SystemButtonStyle.DONE,
+    title : 'Send'
 });
 
-var header = Ti.UI.createLabel({
-	text: "Hello",
-	font: [fontSize = 20, fontType = "Arial",],
-	fontAlign: "center"
+var camera = Ti.UI.createButton({
+    systemButton : Ti.UI.iPhone.SystemButton.CAMERA
+});
+
+var cancel = Ti.UI.createButton({
+    systemButton : Ti.UI.iPhone.SystemButton.CANCEL
+});
+
+var flexSpace = Ti.UI.createButton({
+    systemButton : Ti.UI.iPhone.SystemButton.FLEXIBLE_SPACE
+});
+
+var textarea = Ti.UI.createTextArea({
+    borderColor : '#000',
+    color : '#000',
+    keyboardToolbar : [cancel, flexSpace, camera, flexSpace, send],
+    keyboardToolbarColor : '#999',
+    keyboardToolbarHeight : 40,
+    value : 'Focus to see keyboard with toolbar',
+    top : 10,
+    width : 300, height : 120
 });
 
 //just like Views and Labels we are going to have to add these to a View or a Window
 
-mainWin.add(newImage, header);
+mainWin.add(textarea);
 mainWin.open();
 
 //its auto-filling the size because we did not specify a size, the borderRadius is applied along with the left and right space
