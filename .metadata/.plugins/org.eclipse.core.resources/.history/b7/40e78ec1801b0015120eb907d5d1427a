@@ -1,0 +1,10 @@
+//declare a variable to run a function, then another variable for the window
+var weatherPage = function(){
+	var weatherWindow = Ti.UI.createWindow({
+		title: "Weather"
+	});
+	weatherWindow.add(viewContainer);
+	//don't forget to call the navigation window from the first page and load the new variable window name
+	navWindow.openWindow(weatherWindow);
+};
+
