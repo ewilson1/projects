@@ -11,6 +11,12 @@ var customPage = function(){
 //add event listener here, there will be another event listener at the bottom of the page
 openView2.addEventListener("click", customPage);
 
+//set the parameters for the background page
+var pWidth = Ti.Platform.displayCaps.platformWidth;
+var pHeight = Ti.Platform.displayCaps.platformHeight;
+
 var bgImage = Ti.UI.createImageView({
-	image: "Weather-Background.jpg"
+	image: "Weather-Background.jpg",
+	width: pWidth,
+	height: pHeight
 });
