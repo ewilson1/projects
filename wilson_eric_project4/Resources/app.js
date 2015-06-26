@@ -17,7 +17,7 @@ var openView = Ti.UI.createView({
 	left: 50,
 	right: 50,
 	height: 100,
-	top: 100,
+	top: 35,
 });
 
 //declare a variable to create a label for the text inside the window (view) above
@@ -28,7 +28,7 @@ var openText = Ti.UI.createLabel({
 	font: {fontSize: 20, fontfamily: "Arial"},
 });
 
-//now add the text (label) to the first view
+//now add the text (label) to the 1st view
 openView.add(openText);
 
 var openView1 = Ti.UI.createView({
@@ -38,11 +38,10 @@ var openView1 = Ti.UI.createView({
 	top: openView.top + openView.height + 10,
 	left: 50,
 	right: 50,
-	height: 100,
-	
+	height: 100,	
 });
 
-//declare a variable to create a label for the text inside the window (view) above
+//declare a variable to create a label for the text inside the window (2nd view) above
 var openText1 = Ti.UI.createLabel({
 	text: "Wilson's Weather Team",
 	color: "white",
@@ -50,7 +49,7 @@ var openText1 = Ti.UI.createLabel({
 	font: {fontSize: 20, fontfamily: "Arial"},
 });
 
-//now add the text (label) to the view
+//now add the text (label) to the 2nd view
 openView1.add(openText1);
 
 var openView2 = Ti.UI.createView({
@@ -60,11 +59,10 @@ var openView2 = Ti.UI.createView({
 	top: openView1.top + openView1.height + 10,
 	left: 50,
 	right: 50,
-	height: 100,
-	
+	height: 100,	
 });
 
-//declare a variable to create a label for the text inside the window (view) above
+//declare a variable to create a label for the text inside the window (3rd view) above
 var openText2 = Ti.UI.createLabel({
 	text: "Custom Weather Page",
 	color: "white",
@@ -72,34 +70,35 @@ var openText2 = Ti.UI.createLabel({
 	font: {fontSize: 20, fontfamily: "Arial"},
 });
 
+//now add the text (label) to the 3rd view
+openView2.add(openText2);
+
+//declare a variable to create just a plain label to meet the requirements of the project, this will go at the bottom.
 var openText3 = Ti.UI.createLabel({
 	text: "VFW Term 1506//Eric Wilson",
-	top: openView2.top + openView2.height + 50,
+	top: openView2.top + openView2.height + 15,
+	color: "white",
+	textAlign: "center",
+	font: {fontSize: 15, fontfamily: "Arial"},	
+});
+
+//declare a variable to create just a plain lable to meet the requirements of the project, this will go at the top. Instructing what to do.
+var openText4 = Ti.UI.createLabel({
+	text: "Click Below To Get Started",
+	top: 10,
 	color: "white",
 	textAlign: "center",
 	font: {fontSize: 15, fontfamily: "Arial"},
 	
 });
 
-var openText4 = Ti.UI.createLabel({
-	text: "Click Below To Get Started",
-	top: 50,
-	color: "white",
-	textAlign: "center",
-	font: {fontSize: 25, fontfamily: "Arial"},
-	
-});
 
-//now add the text (label) to the view
-openView2.add(openText2);
+//Now, require the next .js file here on the bootstrap page
+
+var weather = require("gallery");
 
 
-//Now, require both .js files here on the bootstrap page, in backwards order...
-//var pictures = require("FullScreen");
-
-//var weather = require("Weather_Gallery");
-
-//add the View to the main window
+//add the Views and Labels to the main window
 mainWindow.add(openView, openView1, openView2, openText3, openText4);
 
 //open the main window
