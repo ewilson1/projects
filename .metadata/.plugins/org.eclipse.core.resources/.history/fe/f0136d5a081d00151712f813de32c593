@@ -1,0 +1,133 @@
+//declare a variable to run a function, then another variable for the window
+var teamPage = function(){
+	var teamWindow = Ti.UI.createWindow({
+		title: "Weather Team",
+	});
+	//don't forget to call the navigation window from the first page and load the new variable window name
+	navWindow.openWindow(teamWindow);
+
+//add event listener here, there will be another event listener at the bottom of the page
+
+//Start building the platform to meet the requirements of this page
+
+	//JSON Data
+	var family = [
+		{title: "Michelle", 
+		descripton:"Known to everyone simply as the one who can do it all, she is by default...WonderWoman. She is the PTA President 4 years running, the Regional Co-ordinator of the entire SouthEast Region for MOMs Club. Without a doubt, the world's most amazing person. I might be just a little bias, but she really is awesome.",
+		image: "Wonder_Woman.png"
+		},
+		
+		
+		{title: "Eric", 
+		descripton: "Eric is a superhuman known to his son as the Hulk. Michelle was unaware of this phenomenon at the start, but has come to like this version of Eric much better than the old name of Santa Claus.",
+		image: "Hulk.png" 
+		}, 
+		
+		{title: "Aidan", 
+		descripton: "This miracle of life has been know to cause all kind of havoc, while at the same time holding a special place in Michelle's heart. He is 10 years old, but has an old soul that many have commented on as precious.",
+		image: "Captain_America.png"
+		},
+		
+	];	
+		//create a Table View to place the JSON data in
+			var people = Ti.UI.createTableView({
+				backgroundImage: "Weather-Background.jpg"
+			});
+			
+			if(Ti.Platform.name === "iPhone OS"){
+				people.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+			}
+			
+			var familySection = Ti.UI.createTableViewSection({
+				headerTitle: "The Wilson Weather Team",
+				footerTitle: "Not including the dog who is not a super-hero."
+			});
+			
+				var getDetail = function(){
+					var detailWindow = Ti.UI.createWindow({
+						backgroundColor: "#f5f5f5"
+					});
+					var detailTitleView = Ti.UI.createView({
+						height: 65,
+						backgroundColor: "#fff",
+						top: 0
+					});
+					
+					var detailBorder = Ti.UI.createView({
+						backgroundColor: "#dbdbdb",
+						height: 1,
+						top: detailTitleView.height + detailTitleView.top
+					});
+					
+					var detailTitleLabel =Ti.UI.createLabel({
+						text: this.title,
+						font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
+						top: 30,
+						width: "100%",
+						textAlign: "center"
+					});
+					
+					var detailText = Ti.UI.createLabel({
+						text: this.desc,
+						font: {fontSize: 14, fontFamily: "Arial"},
+						top: detailBorder.height + detailBorder.top + 40,
+						right: 10
+					});
+					
+					var detailImage = Ti.UI.createImageView({
+						image: this.image,
+						left: 10,
+						top: 50,
+					});
+					
+					var closeButton = Ti.UI.createLabel({
+						backgroundColor: "dadada",
+						text: "Close",
+						color: "fff",
+						height: 50,
+						font: {fontSize: 12, fontFamily: "Arial"},
+						width: "100%",
+						bottom: 0,
+						textAlign: "center",
+					});
+					
+					var closeWindow = function(){
+					detailWindow.close({transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT});
+					};
+					
+					closeButton.addEventListener("click", closeWindow);
+					
+					detailTitleView.add(detailTitleLabel);
+					detailWindow.add(detailTitleView, detailBorder, detailText, detailImage, closeButton);
+					
+					detailWindow.open({transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT});
+					};
+					
+		
+	
+	for(var i=0, j=family.length; i<j; i++){
+		var theRow = Ti.UI.createTableViewRow({
+			title: family[i].title,
+			desc: family[i].descripton,
+			image: family[i].image,
+			hasDetail: true
+		});
+		
+		
+		familySection.add(theRow);
+		theRow.addEventListener("click", getDetail);
+	
+	}
+	
+	var familySections = [familySection];
+	
+	people.setData(familySections);
+	
+	teamWindow.add(people);
+	
+	navWindow.openWindow(teamWindow);
+};
+
+openView1.addEventListener("click", teamPage);
+
+

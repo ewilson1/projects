@@ -1,0 +1,76 @@
+//declare a variable to run a function, then another variable for the window
+var weatherPage = function(){
+	var weatherWindow = Ti.UI.createWindow({
+		title: "Weather Gallery"
+	});
+	weatherWindow.add(bgImage);
+	//don't forget to call the navigation window from the first page and load the new variable window name
+	navWindow.openWindow(weatherWindow);
+};
+
+//add event listener here, there will be another event listener at the bottom of the page
+openView.addEventListener("click", weatherPage);
+
+//set the parameters for the background page
+var pWidth = Ti.Platform.displayCaps.platformWidth;
+var pHeight = Ti.Platform.displayCaps.platformHeight;
+
+var bgImage = Ti.UI.createImageView({
+	image: "Weather-Background.jpg",
+	width: pWidth,
+	height: pHeight
+});
+
+var wxTeam = require("team");
+
+//Start building the platform to meet the requirements of this page
+
+var imageFiles = ["lightning-storm.jpg", "rainy1.jpg", "snowy1.jpg", "storms1.jpg", "sunny1.jpg"];
+
+for(var i=0; i<imageFiles.length; i++)
+	var wxView = Ti.UI.createImageView({
+		image: imageFiles[i].image,
+		top: 100,
+		left: 10,
+		right: 10,	
+	});
+
+
+var forward = function(){
+	if(imageFiles[i] == null){
+		i=0;
+	}
+	console.log(imageFiles[i]);
+	i++;
+};
+
+//create the view for the Next button
+var buttonViewNext = Ti.UI.createView({
+	backgroundColor: "#23ba00",
+	width: 100,
+	height: 50,
+	top: wxView.top + 200,
+	borderRadius: 5
+});
+
+//create the text for the Next button
+var buttonTextNext = Ti.UI.createLabel({
+	color: "#fff",
+	font: {fontSize: 16, fontFamily: "Arial"},
+	textAlign: "center",
+	text: "Next Image"	
+});
+
+//add the text to the view for the Next button
+buttonViewNext.add(buttonTextNext);
+
+//add the Next button to the wxView view
+wxView.add(buttonViewNext);
+
+//add the wxView view to the bgImage View
+bgImage.add(wxView, imageFiles);
+
+//open the main window
+navWindow.open();
+
+buttonViewNext.addEventListener("click", forward);
