@@ -26,10 +26,20 @@ var customPage = function(){
 	    width : 300, 
 	    height : 120
 	});
+	
+	var warnLabel = Ti.UI.createLabel({
+		text: "Warning! Do not select SEARCH WEB",
+		backgroundColor: "red",
+		top: 250,
+		width: 300,
+		borderRadius: 7,
+		textAlign: "center"
+		
+	});
 	//This is very important. In order to stay within the Navigation of the app, the user must not select SEARCH WEB. This will take them away from the app and they won't be able to navigate back to the menu.
 	var openText2 = Ti.UI.createLabel({
-		text: "Warning! Do not select SEARCH WEB. This will take you away from the navigation page. Hit the DICTIONARY button to load the New Oxford English Dictionary definition. Hit the DONE button in the upper right hand corner to return to this page",
-		top: 250,
+		text: "This will take you away from the navigation page. Hit the DICTIONARY button to load 3 different Dictionary's. The New Oxford English Dictionary, the Oxford English and the Apple English definition. Hit the DONE button in the upper right hand corner to return to this page",
+		top: 275,
 		color: "white",
 		textAlign: "center",
 		font: {fontSize: 15, fontfamily: "Arial"},
@@ -37,7 +47,7 @@ var customPage = function(){
 	});
 	
 //ass the items above to the window
-customWindow.add(openText, openText2, textarea);
+customWindow.add(openText, openText2, warnLabel, textarea);
 //open the custom window using the navWindow.openWindow function
 navWindow.openWindow(customWindow);
 
