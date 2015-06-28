@@ -1,14 +1,12 @@
-Ti.UI.setBackgroundColor("fff");
-
 //create a window to hold the Navigation window
 var mainWindow = Ti.UI.createWindow({
 	title: "Eric Wilson's Weather Menu",
 	backgroundImage: "Weather-Background.jpg"	
 });
+	//create the navigation window on the first page here
 	var navWindow = Ti.UI.iOS.createNavigationWindow({
 		window: mainWindow
 	});
-
 //declare a variable to create the view, which will hold the text
 var openView = Ti.UI.createView({
 	backgroundColor: "blue",
@@ -19,7 +17,6 @@ var openView = Ti.UI.createView({
 	height: 100,
 	top: 35,
 });
-
 //declare a variable to create a label for the text inside the window (view) above
 var openText = Ti.UI.createLabel({
 	text: "Weather Gallery Page",
@@ -27,10 +24,8 @@ var openText = Ti.UI.createLabel({
 	textAlign: "center",
 	font: {fontSize: 20, fontfamily: "Arial"},
 });
-
 //now add the text (label) to the 1st view
 openView.add(openText);
-
 var openView1 = Ti.UI.createView({
 	backgroundColor: "blue",
 	border: 1,
@@ -40,7 +35,6 @@ var openView1 = Ti.UI.createView({
 	right: 50,
 	height: 100,	
 });
-
 //declare a variable to create a label for the text inside the window (2nd view) above
 var openText1 = Ti.UI.createLabel({
 	text: "Wilson's Weather Team",
@@ -48,10 +42,8 @@ var openText1 = Ti.UI.createLabel({
 	textAlign: "center",
 	font: {fontSize: 20, fontfamily: "Arial"},
 });
-
 //now add the text (label) to the 2nd view
 openView1.add(openText1);
-
 var openView2 = Ti.UI.createView({
 	backgroundColor: "blue",
 	border: 1,
@@ -61,18 +53,15 @@ var openView2 = Ti.UI.createView({
 	right: 50,
 	height: 100,	
 });
-
 //declare a variable to create a label for the text inside the window (3rd view) above
 var openText2 = Ti.UI.createLabel({
-	text: "Custom Weather Page",
+	text: "Weather Terminology",
 	color: "white",
 	textAlign: "center",
 	font: {fontSize: 20, fontfamily: "Arial"},
 });
-
 //now add the text (label) to the 3rd view
 openView2.add(openText2);
-
 //declare a variable to create just a plain label to meet the requirements of the project, this will go at the bottom.
 var openText3 = Ti.UI.createLabel({
 	text: "VFW Term 1506//Eric Wilson",
@@ -81,26 +70,17 @@ var openText3 = Ti.UI.createLabel({
 	textAlign: "center",
 	font: {fontSize: 15, fontfamily: "Arial"},	
 });
-
 //declare a variable to create just a plain lable to meet the requirements of the project, this will go at the top. Instructing what to do.
 var openText4 = Ti.UI.createLabel({
 	text: "Click Below To Get Started",
 	top: 10,
 	color: "white",
 	textAlign: "center",
-	font: {fontSize: 15, fontfamily: "Arial"},
-	
+	font: {fontSize: 15, fontfamily: "Arial"},	
 });
-
+//require the next page
 var weather = require("gallery");
-
-//var wxTeam = require("team");
-
-//var wxCustom = require("custom");
-
 //add the Views and Labels to the main window
 mainWindow.add(openView, openView1, openView2, openText3, openText4);
-
 //open the main window
 navWindow.open();
-

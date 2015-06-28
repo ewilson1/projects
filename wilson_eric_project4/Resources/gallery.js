@@ -8,7 +8,7 @@ var weatherPage = function(){
 	//don't forget to call the navigation window from the first page and load the new variable window name
 	navWindow.openWindow(weatherWindow);
 	
-		//create the view for the Next button
+	//create the view for the Next button
 	var buttonViewNext = Ti.UI.createView({
 		backgroundColor: "#23ba00",
 		width: 100,
@@ -43,29 +43,27 @@ var weatherPage = function(){
 				borderRadius: 7,
 				height: 300
 			});
-				
+				//create a variable that will randomly select from the array of pictures in the images folder
 				var i = Math.floor((Math.random()*6));
-				console.log(i);
+				console.log(i);//notice how the console shows the number of the image in the array, and how its random
 				var pics = Ti.UI.createImageView({
 				image: "images/" + wxPics[i],
-				//top: "auto",
 				width: "auto",
 				height: "auto"
 			});
 			//add the image view variable to the view variable	
 			wxHolder.add(pics);
 			weatherWindow.add(wxHolder);
-			
+			//close the forward function
 			};
-			
+			//add the Event listener to the to the next button
 			buttonViewNext.addEventListener("click", forward);
 		};	
 
 		
-//add event listener here, there will be another event listener at the bottom of the page
+//add event listener here to open the page from the Weather Gallery button from the menu page
 openView.addEventListener("click", weatherPage);
-
+//require the next .js page
 var wxTeam = require("team");
-
 //open the main window
 navWindow.open();

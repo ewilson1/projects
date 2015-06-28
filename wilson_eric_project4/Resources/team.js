@@ -22,11 +22,11 @@ var teamPage = function(){
 		}, 
 		
 		{title: "Aidan", 
-		descripton: "This miracle of life has been know to cause all kind of havoc, while at the same time holding a special place in Michelle's heart. He is 10 years old, but has an old soul that many have commented on as precious.",
+		descripton: "This miracle of life has been know to cause all kind of havoc, while at the same time holding a special place in our hearts. He is 10 years old, but has an old soul that many have commented on as precious. But don't be fooled, this Super-Hero is always watching for trouble...and if he's not in it, then he calls others out in their defense.",
 		image: "captain_america.png"
 		},
-		
-	];	
+		//close the array
+		];	
 		//create a Table View to place the JSON data in
 			var people = Ti.UI.createTableView({
 				backgroundImage: "Weather-Background.jpg"
@@ -50,13 +50,11 @@ var teamPage = function(){
 						backgroundColor: "#fff",
 						top: 0
 					});
-					
 					var detailBorder = Ti.UI.createView({
 						backgroundColor: "#dbdbdb",
 						height: 1,
 						top: detailTitleView.height + detailTitleView.top
 					});
-					
 					var detailTitleLabel =Ti.UI.createLabel({
 						text: this.title,
 						font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
@@ -64,7 +62,6 @@ var teamPage = function(){
 						width: "100%",
 						textAlign: "center"
 					});
-					
 					var detailText = Ti.UI.createLabel({
 						text: this.desc,
 						font: {fontSize: 14, fontFamily: "Arial"},
@@ -72,43 +69,38 @@ var teamPage = function(){
 						right: 25,
 						left: 25,
 					});
-					
 					var picView = Ti.UI.createImageView({
 						height: detailTitleView.top + detailTitleView.height + 250,
 						top: 300
 					});
-					
 					var detailImage = Ti.UI.createImageView({
 						image: this.image,
 						bottom: 0,
 					});
-					
 					var closeButton = Ti.UI.createLabel({
-						backgroundColor: "dadada",
-						text: "Close",
+						backgroundColor: "blue",
+						text: "Click to go back to the team",
 						color: "fff",
 						height: 50,
-						font: {fontSize: 12, fontFamily: "Arial"},
+						font: {fontSize: 20, fontFamily: "Arial"},
 						width: "100%",
 						bottom: 0,
 						textAlign: "center",
 					});
-					
 					var closeWindow = function(){
-					detailWindow.close({transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT});
-					};
+						//add some animation to the open and close features
+						detailWindow.close({transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT});
+						};
+						//put an Event Listener to the close button
+						closeButton.addEventListener("click", closeWindow);
+						//add the images, details and dimentions of the detail Window
+						picView.add(detailImage);
+						detailTitleView.add(detailTitleLabel);
+						detailWindow.add(detailTitleView, detailBorder, detailText, picView, closeButton);
+						//finish with more animation to the open feature on the TableViewRow
+						detailWindow.open({transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT});
+						};
 					
-					closeButton.addEventListener("click", closeWindow);
-					
-					picView.add(detailImage);
-					detailTitleView.add(detailTitleLabel);
-					detailWindow.add(detailTitleView, detailBorder, detailText, picView, closeButton);
-					
-					detailWindow.open({transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT});
-					};
-					
-		
-	
 		for(var i=0, j=family.length; i<j; i++){
 			var theRow = Ti.UI.createTableViewRow({
 				title: family[i].title,
@@ -117,23 +109,22 @@ var teamPage = function(){
 				hasDetail: true
 			});
 		
-		
+		//add the section to the row
 		familySection.add(theRow);
+		//add an Event Listener to the getDetail function
 		theRow.addEventListener("click", getDetail);
-	
 	}
-	
+	//build the variable for the array
 	var familySections = [familySection];
-	
+	//set the data to the array
 	people.setData(familySections);
-	
+	//add the variable to the window
 	teamWindow.add(people);
-	
-	navWindow.openWindow(teamWindow);
+	//open the window inside the context of the entire function
+	navWindow.openWindow(teamWindow);	
+//close out the entire function from above
 };
-
+//require the next page
 var lastPage = require("custom");
-
+//open the page by putting an event listener to the Weather team button from the menu
 openView1.addEventListener("click", teamPage);
-
-

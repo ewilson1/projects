@@ -1,0 +1,34 @@
+//declare a variable to run a function, then another variable for the window
+var customPage = function(){
+	var customWindow = Ti.UI.createWindow({
+		title: "Weather Terminology",
+	});
+	//don't forget to call the navigation window from the first page and load the new variable window name
+	navWindow.openWindow(customWindow);
+
+//Start building the platform to meet the requirements of this page
+
+	
+	var textarea = Ti.UI.createTextArea({
+	    borderColor : '#000',
+	    color : '#000',
+	    //keyboardToolbar : [cancel, flexSpace, camera, flexSpace],
+	    keyboardToolbarColor : '#999',
+	    keyboardToolbarHeight : 40,
+	    value : "Search Weather Terms Here. Highlight the term or word, then hit define to get the definition",
+	    top : 100,
+	    width : 300, 
+	    height : 120
+	});
+	
+	var info = Ti.UI.createTextField({
+	});
+
+customWindow.add(textarea);
+
+navWindow.openWindow(customWindow);
+
+
+};
+
+openView2.addEventListener("click", customPage);

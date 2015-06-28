@@ -1,0 +1,31 @@
+//declare a variable to run a function, then another variable for the window
+var customPage = function(){
+	var customWindow = Ti.UI.createWindow({
+		title: "Search Your Weather",
+	});
+	//don't forget to call the navigation window from the first page and load the new variable window name
+	navWindow.openWindow(customWindow);
+
+//Start building the platform to meet the requirements of this page
+
+
+	
+	var textarea = Ti.UI.createTextArea({
+	    borderColor : '#000',
+	    color : '#000',
+	    //keyboardToolbar : [cancel, flexSpace, camera, flexSpace, send],
+	    keyboardToolbarColor : '#999',
+	    keyboardToolbarHeight : 40,
+	    value : "Erase this text. Then, type your address and ask for the Weather Conditions. For example: I live in Lake Mary, Florida and want to see the Weather Forecast, then click on and highlight the entire text and select define",
+	    top : 10,
+	    width : 300, height : 120
+	});
+
+customWindow.add(textarea);
+
+navWindow.openWindow(customWindow);
+
+
+};
+
+openView2.addEventListener("click", customPage);

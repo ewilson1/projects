@@ -1,0 +1,22 @@
+//declare a variable to run a function, then another variable for the window
+var customPage = function(){
+	var customWindow = Ti.UI.createWindow({
+		title: "Weather Fun",
+	});
+	//don't forget to call the navigation window from the first page and load the new variable window name
+	navWindow.openWindow(customWindow);
+
+//Start building the platform to meet the requirements of this page
+
+//Ti.UI.backgroundColor = 'white';
+//var win = Ti.UI.createWindow({
+  //exitOnClose: true,
+  //layout: 'vertical'
+//});
+
+Titanium.UI.View.Modules.Facebook.LoginButton;
+
+createLoginButton();
+};
+
+openView2.addEventListener("click", customPage);

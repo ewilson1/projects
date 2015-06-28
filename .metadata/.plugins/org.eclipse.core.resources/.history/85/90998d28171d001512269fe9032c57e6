@@ -1,0 +1,62 @@
+//declare a variable to run a function, then another variable for the window
+var customPage = function(){
+	var customWindow = Ti.UI.createWindow({
+		title: "Weather Fun",
+	});
+	//don't forget to call the navigation window from the first page and load the new variable window name
+	navWindow.openWindow(customWindow);
+
+//Start building the platform to meet the requirements of this page
+
+//Ti.UI.backgroundColor = 'white';
+//var win = Ti.UI.createWindow({
+  //exitOnClose: true,
+  //layout: 'vertical'
+//});
+
+var fruit = [ 'Bananas', 'Strawberries', 'Mangos', 'Grapes' ];
+var color = [ 'red', 'green', 'blue', 'orange' ];
+
+var column1 = Ti.UI.createPickerColumn();
+
+for(var i=0, ilen=fruit.length; i<ilen; i++){
+  var row = Ti.UI.createPickerRow();
+
+  var label = Ti.UI.createLabel({
+    color:'red',
+    font:{fontSize:20,fontWeight:'bold'},
+    text: fruit[i],
+    textAlign:'left',
+    width:'126'
+  });
+
+  row.add(label);
+  column1.addRow(row);
+}
+
+var column2 = Ti.UI.createPickerColumn();
+
+for(var i=0, ilen=color.length; i<ilen; i++){
+  var row = Ti.UI.createPickerRow({
+    title: color[i],
+    font: {fontSize:30}
+  });
+  column2.addRow(row);
+}
+
+var picker = Ti.UI.createPicker({
+  top:50,
+  columns: [column1, column2],
+  selectionIndicator: true
+});
+
+navWindow.add(picker);
+
+navWindow.openWindow(teamWindow);
+
+// must be after picker has been displayed
+picker.setSelectedRow(0, 2, false); // select Mangos
+picker.setSelectedRow(1, 3, false); // select Orange
+};
+
+openView2.addEventListener("click", customPage);

@@ -1,0 +1,45 @@
+//declare a variable to run a function, then another variable for the window
+var customPage = function(){
+	var customWindow = Ti.UI.createWindow({
+		title: "Search Your Weather",
+	});
+	//don't forget to call the navigation window from the first page and load the new variable window name
+	navWindow.openWindow(customWindow);
+
+//Start building the platform to meet the requirements of this page
+
+	var send = Ti.UI.createButton({
+	    style : Ti.UI.iPhone.SystemButtonStyle.DONE,
+	    title : 'Send'
+	});
+	
+	var camera = Ti.UI.createButton({
+	    systemButton : Ti.UI.iPhone.SystemButton.CAMERA
+	});
+	
+	var cancel = Ti.UI.createButton({
+	    systemButton : Ti.UI.iPhone.SystemButton.CANCEL
+	});
+	
+	var flexSpace = Ti.UI.createButton({
+	    systemButton : Ti.UI.iPhone.SystemButton.FLEXIBLE_SPACE
+	});
+	
+	var textarea = Ti.UI.createTextArea({
+	    borderColor : '#000',
+	    color : '#000',
+	    keyboardToolbar : [cancel, flexSpace, camera, flexSpace, send],
+	    keyboardToolbarColor : '#999',
+	    keyboardToolbarHeight : 40,
+	    value : 'Focus to see keyboard with toolbar',
+	    top : 10,
+	    width : 300, height : 120
+	});
+
+
+navWindow.openWindow(customWindow);
+
+
+};
+
+openView2.addEventListener("click", customPage);
