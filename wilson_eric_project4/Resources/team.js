@@ -25,6 +25,17 @@ var teamPage = function(){
 		descripton: "This miracle of life has been know to cause all kind of havoc, while at the same time holding a special place in our hearts. He is 10 years old, but has an old soul that many have commented on as precious. But don't be fooled, this Super-Hero is always watching for trouble...and if he's not in it, then he calls others out in their defense.",
 		image: "captain_america.png"
 		},
+		
+		{title: "Grandpa", 
+		descripton: "This is my Grandpa, he is Thor. He lays the hammer down with force, but deep down he's a real softy. He has to be because he likes the Buffalo Bills",
+		image: "Thor_2.jpg"
+		},
+		
+		{title: "Grandma", 
+		descripton: "This is my Grandma, she's the Black Widow. She loves the Hulk, but is stuck married to Thor. See those laser things that she has for weapons? She uses them to play Wheel of Fortune and win lots of money. Also she drinks beer, but loves Pina Coloda's",
+		image: "black_widow.png"
+		},
+		
 		//close the array
 		];	
 		//create a Table View to place the JSON data in
